@@ -10,11 +10,12 @@ public class Program
 
         var win = false;
 
+        Console.WriteLine("Guess number from 0 to 100!");
+
         do
         {
-            Console.WriteLine("Guess my number from 0 to 100!");
             var s = Console.ReadLine();
-
+            if (s == null) continue;
             var i = int.Parse(s);
             
             if (i < winNum)
@@ -30,7 +31,8 @@ public class Program
                 Console.WriteLine("You win!");
                 win = true;
             }
-
+            
+            Console.WriteLine();
         } while (win == false);
         
     }
