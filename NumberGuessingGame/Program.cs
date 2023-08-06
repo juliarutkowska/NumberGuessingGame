@@ -4,36 +4,36 @@ public class Program
 {
     static void Main(string[] args)
     {
-        var r = new Random();
+        var random = new Random();
 
-        var winNum = r.Next(0, 100);
+        var winNumber = random.Next(0, 100);
 
-        var win = false;
+        var winGuess = false;
 
         Console.WriteLine("Guess number from 0 to 100!");
 
         do
         {
-            var s = Console.ReadLine();
-            if (s == null) continue;
-            var i = int.Parse(s);
+            var input = Console.ReadLine();
+            if (input == null) continue;
+            var userGuess = int.Parse(input);
             
-            if (i < winNum)
+            if (userGuess < winNumber)
             {
                 Console.WriteLine("Too low. Try higher!");
             }
-            else if (i > winNum)
+            else if (userGuess > winNumber)
             {
                 Console.WriteLine("Too high. Try lower!");
             }
             else
             {
                 Console.WriteLine("You win!");
-                win = true;
+                winGuess = true;
             }
             
             Console.WriteLine();
-        } while (win == false);
+        } while (winGuess == false);
         
     }
 }
