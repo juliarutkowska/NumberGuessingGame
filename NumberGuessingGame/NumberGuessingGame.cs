@@ -1,8 +1,8 @@
 ﻿namespace NumberGuessingGame;
 
-public class NumberGuessingGame
+public abstract class NumberGuessingGame
 {
-    static void Main(string[] args)
+    private static void Main(string[] args)
     {
         var random = new Random();
 
