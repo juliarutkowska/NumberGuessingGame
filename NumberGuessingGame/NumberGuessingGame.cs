@@ -1,6 +1,6 @@
 ﻿namespace NumberGuessingGame;
 
-public class Program
+public class NumberGuessingGame
 {
     static void Main(string[] args)
     {
@@ -17,18 +17,19 @@ public class Program
             var input = Console.ReadLine();
             if (input == null) continue;
             var userGuess = int.Parse(input);
-            
-            if (userGuess < winNumber)
+
+            var guessMessage = userGuess switch
             {
-                Console.WriteLine("Too low. Try higher!");
-            }
-            else if (userGuess > winNumber)
+                _ when userGuess < winNumber => "Too low. Try higher!",
+                _ when userGuess > winNumber => "Too high. Try lower!",
+                _ when userGuess == winNumber => "You win!",
+                _ => ""
+            };
+
+            Console.WriteLine(guessMessage);
+
+            if (userGuess == winNumber)
             {
-                Console.WriteLine("Too high. Try lower!");
-            }
-            else
-            {
-                Console.WriteLine("You win!");
                 winGuess = true;
             }
             
